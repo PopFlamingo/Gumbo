@@ -4,7 +4,7 @@ import XCTest
 final class GumboTests: XCTestCase {
     func testExample() {
         
-        let webpageURL = URL(string: "http://www.lemonde.fr")!
+        let webpageURL = URL(string: "http://www.example.org")!
         let document = try! Document(url: webpageURL)
         print(document.allURLs(relativeTo: webpageURL).compactMap({ $0.absoluteURL }))
     }
