@@ -20,7 +20,7 @@ public class Document: ContainerNode {
         gumbo_destroy_output(&opts, outputPtr)
     }
 
-    var url: URL?
+    public var url: URL?
     
     public convenience init(url: URL) throws {
         let string = try String(contentsOf: url)
