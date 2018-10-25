@@ -14,16 +14,16 @@ public class Node {
     
     public internal(set) weak var parent: Node?
     
-    var parentElement: Element? {
+    public var parentElement: Element? {
         return parent as? Element
     }
     
-    let kind: Kind
+    public let kind: Kind
     
     /// The index of node within its parent
-    let indexWithinParent: Int?
+    public let indexWithinParent: Int?
     
-    enum Kind {
+    public enum Kind {
         
         init(gumboType: GumboNodeType) {
             switch gumboType {

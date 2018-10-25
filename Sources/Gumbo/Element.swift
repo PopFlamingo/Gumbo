@@ -3,8 +3,8 @@ import Foundation
 
 public class Element: ContainerNode {
     
-    var attributes: [String:String]
-    var tag: String
+    public var attributes: [String:String]
+    public var tag: String
     
     override init(gumboNode: GumboNode, parent: Node? = nil, indexWithinParent: Int? = nil) {
         

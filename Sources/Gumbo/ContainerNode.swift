@@ -53,9 +53,9 @@ public class ContainerNode: Node {
 
     
     /// Children
-    private(set) var children: [Node]
+    private(set) public var children: [Node]
     
-    func elements(withTag tag: String) -> [Element] {
+    public func elements(withTag tag: String) -> [Element] {
         
         var elements = [Element]()
         
@@ -74,7 +74,7 @@ public class ContainerNode: Node {
         return elements
     }
     
-    func element(withId id: String) -> Element? {
+    public func element(withId id: String) -> Element? {
         if let e = children.compactMap({ $0 as? Element }).first(where: { $0.attributes["id"] == id }) {
             return e
         } else {
@@ -88,14 +88,14 @@ public class ContainerNode: Node {
         }
     }
     
-    func recursiveChildren(where predicate: ((Node)->Bool)) -> [Node] {
+    public func recursiveChildren(where predicate: ((Node)->Bool)) -> [Node] {
         var matched = children.filter(predicate)
         let childMatches = children.compactMap({ $0 as? ContainerNode }).map({ $0.recursiveChildren(where: predicate) }).flatMap({ $0 })
         matched.append(contentsOf: childMatches)
         return matched
     }
     
-    func allURLs(relativeTo webpageURL: URL?) -> Set<URL> {
+    public func allURLs(relativeTo webpageURL: URL?) -> Set<URL> {
         var allURLs = Set<URL>()
         for aElement in self.elements(withTag: "a") {
             guard let baseLink = aElement.attributes["href"] else { continue }

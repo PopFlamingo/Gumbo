@@ -4,10 +4,10 @@ import CGumbo
 class TextNode: Node {
     
     var node: GumboNode
-    var text: String {
+    public var text: String {
         return String(cString: node.v.text.text)
     }
-    var originalText: String {
+    public var originalText: String {
         return String(cString: node.v.text.original_text.data)
     }
     
