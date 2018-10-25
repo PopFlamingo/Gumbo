@@ -1,0 +1,5 @@
+module CGumbo {
+    header "shim.h"
+    link "gumbo"
+    export *
+}
