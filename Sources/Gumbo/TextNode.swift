@@ -1,7 +1,7 @@
 import Foundation
 import CGumbo
 
-class TextNode: Node {
+public class TextNode: Node {
     
     var node: GumboNode
     public var text: String {
